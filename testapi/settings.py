@@ -43,7 +43,9 @@ THIRD_PARTY_APPS = [
     "rest_framework"
 ]
 
-LOCAL_APPS = []
+LOCAL_APPS = [
+    "api"
+]
 
 INSTALLED_APPS = CORE_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
