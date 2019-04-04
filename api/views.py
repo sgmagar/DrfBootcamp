@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render
 
 # Create your views here.
@@ -7,7 +8,7 @@ from rest_framework.viewsets import ViewSet, ModelViewSet
 
 from api.filters import ProductFilter
 from api.models import Product
-from api.serializers import ProductSerializer
+from api.serializers import ProductSerializer, UserSerializer
 
 
 class HelloAPIView(APIView):
@@ -49,3 +50,8 @@ class ProductViewset(ModelViewSet):
     serializer_class = ProductSerializer
     queryset = Product.objects.all()
     filter_class = ProductFilter
+
+
+class UserViewset(ModelViewSet):
+    serializer_class = UserSerializer
+    queryset = User.objects.all()
