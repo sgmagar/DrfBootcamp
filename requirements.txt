@@ -3,3 +3,4 @@ django-filter==2.1.0
 djangorestframework==3.9.2
 gunicorn==19.9.0
 django-environ==0.4.4
+whitenoise==3.3.0
