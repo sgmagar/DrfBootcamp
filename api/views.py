@@ -2,6 +2,9 @@ from django.contrib.auth.models import User
 from django.shortcuts import render
 
 # Create your views here.
+from rest_framework.authentication import SessionAuthentication, \
+    TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.response import Response
@@ -52,6 +55,8 @@ class ProductViewset(ModelViewSet):
     serializer_class = ProductSerializer
     queryset = Product.objects.all()
     filter_class = ProductFilter
+    permission_classes = (IsAuthenticated,)
+    authentication_classes = (SessionAuthentication, TokenAuthentication)
 
 
 class UserViewset(ModelViewSet):
